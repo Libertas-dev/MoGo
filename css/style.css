@@ -42,6 +42,10 @@
     src: url('../fonts/roboto-v49-cyrillic_latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Montserrat';
@@ -50,63 +54,114 @@ body {
 }
 
 a {
-    font-family: 'Montserrat';
-    font-weight: 400;
-    font-size: 14px;
-    text-decoration: none;
     color: #95e1d3;
+    text-decoration: none;
 }
 
 h2 {
     font-family: 'Kaushan Script';
-    font-weight: 400;
     font-size: 24px;
 }
 
 h3 {
-    font-family: 'Montserrat';
     font-weight: 700;
     font-size: 30px;
 }
 
-h4 {
-    font-family: 'Montserrat';
-    font-weight: 400;
-    font-size: 14px;
-}
-
 p {
     font-family: 'Roboto';
-    font-weight: 400;
     font-size: 15px;
 }
 
 input[type='email'] {
     font-family: 'Roboto';
     font-weight: 300;
-    font-size: 14px;
 }
 
 input[type='button'] {
-    font-family: 'Montserrat';
     font-weight: 700;
-    font-size: 14px;
+}
+
+/* header */
+.header {
+    padding-top: 17px;
 }
 
 .header-logo {
-    font-family: 'Montserrat';
     font-weight: 700;
     font-size: 30px;
-    text-decoration: none;
-    color: #95e1d3;
 }
 
-#menu-item-active {
-    font-family: 'Montserrat';
-    font-weight: 400;
-    font-size: 14px;
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.header .menu {
+    display: flex;
+    gap: 55px;
+    list-style-type: none;
+}
+
+.active {
     text-decoration: none;
     color: #f38181;
+}
+
+/* container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* benefits */
+.benefits h2 {
+    margin-top: 68px;
+    text-align: center;
+}
+
+.benefits h3 {
+    margin-top: 20px;
+    margin-bottom: 109px;
+    text-align: center;
+}
+
+.benefits-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style-type: none;
+}
+
+/* team */
+
+.team h2 {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.team h3 {
+    margin-top: 20px;
+    margin-bottom: 85px;
+    text-align: center;
+}
+
+.team-list {
+    margin-top: 17px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    text-align: center;
+    list-style-type: none;
+}
+
+.team-list__item h4 {
+    margin-top: 30px;
+    margin-bottom: 11px;
 }
 
 .team-list__item p {
@@ -115,8 +170,10 @@ input[type='button'] {
     font-size: 15px;
 }
 
-.footer-info {
-    font-family: 'Montserrat';
-    font-weight: 400;
-    font-size: 14px;
+/* footer */
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
