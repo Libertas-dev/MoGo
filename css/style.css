@@ -82,6 +82,13 @@ input[type='button'] {
     font-weight: 700;
 }
 
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* header */
 .header {
     padding-top: 17px;
@@ -107,14 +114,6 @@ input[type='button'] {
 .active {
     text-decoration: none;
     color: #f38181;
-}
-
-/* container */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* benefits */
