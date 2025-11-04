@@ -58,32 +58,11 @@ a {
     text-decoration: none;
 }
 
-h2 {
-    font-family: 'Kaushan Script';
-    font-weight: 400;
-    font-size: 24px;
-}
-
-h3 {
-    font-weight: 700;
-    font-size: 30px;
-    text-transform: uppercase;
-}
-
 p {
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 15px;
     color: #b6b6b6;
-}
-
-input[type='email'] {
-    font-family: 'Roboto';
-    font-weight: 300;
-}
-
-input[type='button'] {
-    font-weight: 700;
 }
 
 .container {
@@ -99,6 +78,25 @@ input[type='button'] {
     background-color: #f38181;
     margin-left: auto;
     margin-right: auto;
+}
+
+.title {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.pretitle {
+    margin-top: 68px;
+    text-align: center;
+    font-family: 'Kaushan Script';
+    font-weight: 400;
+    font-size: 24px;
+    color: #000;
 }
 
 /* header */
@@ -129,22 +127,7 @@ input[type='button'] {
     border-bottom: 3px solid #f38181;
 }
 
-.menu-item a:active {
-    color: #f38181;
-}
-
 /* benefits */
-.benefits h2 {
-    margin-top: 68px;
-    text-align: center;
-}
-
-.benefits h3 {
-    margin-top: 20px;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
 .benefits-list__content h4 {
     margin: 0 0 20px;
     font-weight: 400;
@@ -183,17 +166,6 @@ input[type='button'] {
 
 /* team */
 .team {
-    text-align: center;
-}
-
-.team h2 {
-    margin-top: 100px;
-    text-align: center;
-}
-
-.team h3 {
-    margin-top: 20px;
-    margin-bottom: 40px;
     text-align: center;
 }
 
