@@ -60,17 +60,21 @@ a {
 
 h2 {
     font-family: 'Kaushan Script';
+    font-weight: 400;
     font-size: 24px;
 }
 
 h3 {
     font-weight: 700;
     font-size: 30px;
+    text-transform: uppercase;
 }
 
 p {
     font-family: 'Roboto';
+    font-weight: 400;
     font-size: 15px;
+    color: #b6b6b6;
 }
 
 input[type='email'] {
@@ -89,14 +93,22 @@ input[type='button'] {
     margin-right: auto;
 }
 
+.divider {
+    width: 60px;
+    height: 4px;
+    background-color: #f38181;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* header */
 .header {
     padding-top: 17px;
 }
 
 .header-logo {
-    font-weight: 700;
     font-size: 30px;
+    font-weight: 700;
 }
 
 .header .container {
@@ -112,7 +124,12 @@ input[type='button'] {
 }
 
 .active {
-    text-decoration: none;
+    padding-bottom: 10px;
+    color: #f38181;
+    border-bottom: 3px solid #f38181;
+}
+
+.menu-item a:active {
     color: #f38181;
 }
 
@@ -124,18 +141,50 @@ input[type='button'] {
 
 .benefits h3 {
     margin-top: 20px;
-    margin-bottom: 109px;
+    margin-bottom: 40px;
     text-align: center;
+}
+
+.benefits-list__content h4 {
+    margin: 0 0 20px;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.benefits-list__content p {
+    margin: 0;
+    line-height: 1.3em;
+}
+
+.benefits .divider {
+    margin-bottom: 60px;
 }
 
 .benefits-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    gap: 105px 30px;
+}
+
+.benefits-list__item {
+    display: flex;
+    flex-basis: calc((100% - 60px) / 3);
+    gap: 20px;
+}
+
+.benefits-list__item svg {
+    width: 38px;
+    min-width: 38px;
 }
 
 /* team */
+.team {
+    text-align: center;
+}
 
 .team h2 {
     margin-top: 100px;
@@ -144,35 +193,91 @@ input[type='button'] {
 
 .team h3 {
     margin-top: 20px;
-    margin-bottom: 85px;
+    margin-bottom: 40px;
     text-align: center;
 }
 
+.item-icon img {
+    display: block;
+}
+
+.team .divider {
+    margin-bottom: 45px;
+}
+
 .team-list {
-    margin-top: 17px;
-    margin-bottom: 80px;
+    margin: 17px 0 80px;
+    padding: 0;
     display: flex;
     justify-content: space-between;
-    gap: 30px;
     text-align: center;
     list-style-type: none;
 }
 
 .team-list__item h4 {
+    font-weight: 400;
+    text-transform: uppercase;
     margin-top: 30px;
     margin-bottom: 11px;
 }
 
 .team-list__item p {
-    font-family: 'Roboto';
+    margin: 0;
     font-weight: 300;
-    font-size: 15px;
+    font-style: italic;
 }
 
 /* footer */
+.footer-divider {
+    width: 1200px;
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    background-color: #b6b6b6;
+}
 
 .footer .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.footer-info p {
+    color: #000;
+}
+
+.footer-info p span {
+    color: #f38181;
+}
+
+.footer-lead {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.footer-lead input[type='email'] {
+    width: 230px;
+    height: 40px;
+    padding: 12px 0 12px 10px;
+    border: 1px solid #b6b6b6;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.footer-lead input[type='email']:focus {
+    border: 1px solid #858484;
+    outline: none;
+}
+
+.footer-lead input[type='submit'] {
+    width: 150px;
+    height: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-style: none;
+    color: white;
+    background-color: #95e1d3;
 }
