@@ -65,6 +65,11 @@ p {
     color: #b6b6b6;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .container {
     width: 100%;
     max-width: 1200px;
@@ -115,26 +120,113 @@ p {
     font-weight: 700;
 }
 
-.header-menu {
-    display: block;
+#burger-menu {
+    display: none;
+}
+
+.burger-menu {
+    display: none;
 }
 
 @media (max-width: 991px) {
+    .header-logo {
+        z-index: 10;
+    }
+
     .header-menu {
-        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 9;
+        background-color: #fff;
+        padding: 100px 20px 20px;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 20px;
+        font-size: 32px;
+        font-weight: 700;
+    }
+
+    .burger-menu {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        z-index: 99;
+    }
+
+    #burger-menu:checked ~ .burger-menu span {
+        transform: rotate(45deg);
+    }
+
+    #burger-menu:checked ~ .burger-menu span::after {
+        transform: rotate(-90deg);
+    }
+
+    .burger-menu span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: #000;
+        position: absolute;
+        top: calc(50% - 1px);
+        left: 0;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .burger-menu span::before,
+    .burger-menu span::after {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: #000;
+        position: absolute;
+        left: 0;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .burger-menu span::before {
+        top: -8px;
+    }
+    .burger-menu span::after {
+        top: 8px;
+    }
+
+    #burger-menu:checked ~ .burger-menu span::after,
+    #burger-menu:checked ~ .burger-menu span::before {
+        top: 0;
+    }
+
+    #burger-menu:checked ~ .header-menu {
+        transform: translate(0);
     }
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
-    text-align: center;
+    align-items: center;
 }
 
 .header .menu {
     display: flex;
     gap: 55px;
     list-style-type: none;
+}
+
+.menu-item a:hover {
+    color: #f38181; /* Або інший колір з макету */
+    transition: color 0.2s linear; /* Плавна зміна */
 }
 
 .active {
@@ -237,7 +329,7 @@ p {
 .team-list__item {
     margin: 0;
     padding: 0;
-    position: relative;
+    max-width: 380px;
 }
 
 .team-list__item h4 {
@@ -253,17 +345,27 @@ p {
     font-style: italic;
 }
 
+.item-icon {
+    position: relative;
+}
+
 .item-icon-filter {
-    width: 380px;
-    height: 470px;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(
         180deg,
         rgba(239, 139, 138, 0.8) 0%,
         rgba(229, 207, 130, 0.8) 100%
     );
     position: absolute;
-    left: -10px;
-    top: -10px;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.item-icon:hover .item-icon-filter {
+    opacity: 1;
 }
 
 /* footer */
@@ -271,9 +373,7 @@ p {
     width: 100%;
     max-width: 1200px;
     height: 1px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
+    margin: 0 0 10px;
     background-color: #b6b6b6;
 }
 
@@ -286,17 +386,14 @@ p {
 
 @media (max-width: 768px) {
     .footer .container {
-        flex-direction: column; /* Розміщуємо елементи в стовпчик */
-    }
-
-    .footer-lead input[type='email'] {
-        width: 100%;
-        min-width: 350px;
+        flex-direction: column;
+        gap: 20px;
     }
 }
 
 .footer-data p {
     color: #000;
+    margin: 0;
 }
 
 .footer-data p span {
@@ -305,18 +402,32 @@ p {
 
 .footer-lead {
     display: flex;
+    width: 100%;
+    max-width: 380px;
+    height: 40px;
     margin-bottom: 10px;
 }
 
+@media (max-width: 768px) {
+    .footer-lead {
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 .footer-lead input[type='email'] {
-    width: 230px;
-    height: 40px;
+    flex-grow: 1;
+    height: 100%;
     padding: 12px 0 12px 10px;
     border: 1px solid #b6b6b6;
-    font-family: 'Roboto';
+    border-right: none;
+    font-family: 'Roboto', sans-serif;
     font-weight: 300;
     font-size: 14px;
     font-style: italic;
+    transition: all 0.3s ease-in-out;
+    min-width: 150px;
 }
 
 .footer-lead input[type='email']:focus {
@@ -325,11 +436,17 @@ p {
 }
 
 .footer-lead input[type='submit'] {
-    width: 150px;
-    height: 40px;
+    width: 40%;
+    height: 100%;
     font-weight: 700;
     text-transform: uppercase;
     border-style: none;
     color: white;
     background-color: #95e1d3;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.footer-lead input[type='submit']:hover {
+    background-color: #82c4b8;
 }

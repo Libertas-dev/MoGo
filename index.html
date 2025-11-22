@@ -11,6 +11,12 @@
         <header class="header">
             <div class="container">
                 <a href="index.html" class="header-logo">MoGo</a>
+
+                <input type="checkbox" id="burger-menu" />
+                <label for="burger-menu" class="burger-menu">
+                    <span></span>
+                </label>
+
                 <nav class="header-menu">
                     <ul class="menu">
                         <li class="menu-item">
@@ -318,10 +324,10 @@
                     <ul class="team-list">
                         <li class="team-list__item">
                             <div class="item-icon">
-                                <div class="item-icon-filter"></div>
                                 <img
                                     src="images/first-man.jpg"
                                     alt="Portrait Graphic Design, Matthew Dix" />
+                                <div class="item-icon-filter"></div>
                             </div>
                             <h4>Matthew Dix</h4>
                             <p>Graphic Design</p>
@@ -331,6 +337,7 @@
                                 <img
                                     src="images/second-man.jpg"
                                     alt="Portrait Branding/UX design, Christopher Campbell" />
+                                <div class="item-icon-filter"></div>
                             </div>
                             <h4>Christopher Campbell</h4>
                             <p>Branding/UX design</p>
@@ -340,6 +347,7 @@
                                 <img
                                     src="images/third-man.jpg"
                                     alt="Portrait Developer, Michael Fertig" />
+                                <div class="item-icon-filter"></div>
                             </div>
                             <h4>Michael Fertig</h4>
                             <p>Developer</p>
@@ -352,17 +360,17 @@
         <footer class="footer">
             <div class="container">
                 <div class="footer-divider"></div>
+
                 <div class="footer-data">
-                    <p>
-                        © 2016 MoGo free PSD template by
-                        <span>Laaqiq</span>
-                    </p>
+                    <p>© 2016 MoGo free PSD template by <span>Laaqiq</span></p>
                 </div>
+
                 <form class="footer-lead" action="#" method="POST">
                     <input
                         type="email"
                         name="user_email"
-                        placeholder="Your Email..." />
+                        placeholder="Your Email..."
+                        required />
                     <input type="submit" value="Subscribe" />
                 </form>
             </div>
